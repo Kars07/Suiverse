@@ -1,0 +1,125 @@
+/* App.css */
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main Container */
+  .App {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+  }
+  
+  /* Header Styling */
+  h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+    background-color: #045095;
+    padding: 1rem;
+  }
+
+  div nav .form-container {
+    padding-left: 4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div .form-container a {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: #045095;
+    height: 90px;
+  }
+  
+  /* Styling for Route Navigation Links */
+  nav {
+    margin: 20px;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #007bff;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Page Section */
+  section {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  section p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  /* Additional Button Styles */
+  button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer Styling */
+  footer {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+  }
+
+.container {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+.container .container-routes {
+    display: block;
+    padding: 1rem 0rem 2rem 3rem;
+}
