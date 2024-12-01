@@ -83,7 +83,7 @@ const NavBar = () => {
             </li>
             <li>
             <Link
-                to="/get-started" // Replace with the route you want
+                to="/get-started" 
                 className="btn btn-primary text-black text-base px-4 py-2 rounded-full border-2 border-blue-500 bg-blue-500 hover:bg-blue-600"
               >
                 Get Started

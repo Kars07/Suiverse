@@ -12,11 +12,11 @@ test('renders the app header', () => {
 test('renders navigation links', () => {
   render(<App />);
   // Check if navigation links are present
-  const createDDILink = screen.getByText(/Create DDI/i);
+  const createDDiLink = screen.getByText(/Create DDi/i);
   const creditScoreLink = screen.getByText(/Credit Score/i);
   const loanRequestLink = screen.getByText(/Loan Request/i);
 
-  expect(createDDILink).toBeInTheDocument();
+  expect(createDDiLink).toBeInTheDocument();
   expect(creditScoreLink).toBeInTheDocument();
   expect(loanRequestLink).toBeInTheDocument();
 });
@@ -24,9 +24,10 @@ test('renders navigation links', () => {
 test('renders CreateDDI component when route is matched', () => {
   render(<App />);
   // Test that the "Create DDI" link takes us to the CreateDDI page
-  const createDDILink = screen.getByText(/Create DDI/i);
-  createDDILink.click();
+  const createDDiLink = screen.getByText(/Create DDi/i);
+  createDDiLink.click();
   
-  const createDDIElement = screen.getByText(/Create your Digital Decentralized Identity/i);
-  expect(createDDIElement).toBeInTheDocument();
+  const createDDiElement = screen.getByText(/Create your Digital Decentralized Identity/i);
+  expect(createDDiElement).toBeInTheDocument();
 });
+

@@ -35,4 +35,5 @@ module credit_module {
     public fun get_loan_history(score: &CreditScore): &vector<u64> {
         &score.loan_history
     }
+
 }

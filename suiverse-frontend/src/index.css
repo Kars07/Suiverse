@@ -1,6 +1,12 @@
-/* index.css */
+/* Import external fonts or styles first */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
-/* Reset some default styles */
+/* Tailwind CSS imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -58,9 +64,5 @@ button:hover {
   padding: 20px;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');

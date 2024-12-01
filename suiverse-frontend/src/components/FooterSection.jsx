@@ -1,5 +1,6 @@
 import React from 'react';
 import sui_logo from'../assets/sui_logo.jpg'
+import { Link } from "react-router-dom"
 
 const FooterSection = () => {
   return (

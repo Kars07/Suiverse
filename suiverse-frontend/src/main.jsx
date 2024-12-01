@@ -1,13 +1,12 @@
-// src/main.jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css'; // Importing global styles
-import App from './App.jsx'; // Import the main App component
+import React from "react";
+import ReactDOM from "react-dom/client"; 
+import App from "./App"; 
+import "./index.css"; 
 
-// Assuming we need some additional configuration or bootstrapping for your app
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root")); //the root div where React will be mounted
+
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root') // This is the div where your app gets rendered
+    <App />  {/* Render your main App component */}
+  </React.StrictMode>
 );
