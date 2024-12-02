@@ -1,12 +1,12 @@
-/* Import external fonts or styles first */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+/* Import external fonts */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
 
-/* Tailwind CSS imports */
+/* Tailwind CSS Imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -15,32 +15,16 @@
 
 html, body {
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   background-color: #f4f4f4;
+  color: #333;
 }
 
 #root {
   height: 100%;
 }
 
-/* Basic styling for the app */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  text-align: center;
-}
-
-h1 {
-  color: #333;
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-/* Styling for buttons */
+/* Button Styles */
 button {
   padding: 10px 20px;
   font-size: 1rem;
@@ -55,14 +39,3 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
-/* Basic layout for routes and pages */
-.container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-
-

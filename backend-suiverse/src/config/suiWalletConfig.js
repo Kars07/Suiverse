@@ -1,7 +1,7 @@
 // Configuration for connecting to the SUI network (testnet, mainnet, or custom network)
 
 module.exports = {
-    network: "testnet", // Choose between 'testnet', 'mainnet', or 'devnet'
+    network: "testnet", 
     endpoints: {
       testnet: "https://fullnode.testnet.sui.io", // Testnet SUI fullnode endpoint
       mainnet: "https://fullnode.mainnet.sui.io", // Mainnet SUI fullnode endpoint
@@ -11,6 +11,6 @@ module.exports = {
       testnet: "https://faucet.testnet.sui.io", // Faucet for testnet tokens
       mainnet: "https://faucet.mainnet.sui.io", // Faucet for mainnet tokens
     },
-    // Private key for signing transactions (for development only, use with caution)
-    privateKey: process.env.SUI_PRIVATE_KEY || "your-private-key-here",  // Load from .env for security
+    // Private key for signing transactions 
+    privateKey: process.env.SUI_PRIVATE_KEY || "suiprivkey1qqdz4c72p2sa4efvsjp79nek8stgzhnv8auan3whuuwdy4ac55a0kscwqc6",  
   };

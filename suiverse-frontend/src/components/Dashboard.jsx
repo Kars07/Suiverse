@@ -1,24 +1,22 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Dashboard = () => {
-  const [creditScore, setCreditScore] = useState(null); 
-  const [loading, setLoading] = useState(true); // Loading state
+  const [creditScore, setCreditScore] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Fetch credit score from the backend
   const fetchCreditScore = async () => {
     try {
-      setLoading(true); // Show loader while fetching
-      const response = await axios.get("http://localhost:5000/api/credit-score"); // Replace with your API endpoint
-      setCreditScore(response.data.creditScore); // Assuming backend returns { creditScore: 750 }
-      setLoading(false); // Stop loader
+      setLoading(true);
+      const response = await axios.get("http://localhost:5000/api/credit-score");
+      setCreditScore(response.data.creditScore);
     } catch (error) {
       console.error("Error fetching credit score:", error);
-      setLoading(false); // Stop loader even on error
+    } finally {
+      setLoading(false);
     }
   };
 
-  // Fetch credit score when the component mounts
   useEffect(() => {
     fetchCreditScore();
   }, []);

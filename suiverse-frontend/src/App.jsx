@@ -1,80 +1,64 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import CreateDDi from "./components/CreateDDi";
+import CreateDDI from "./components/CreateDDI";
 import CreditScore from "./components/CreditScore";
 import LoanRequest from "./components/LoanRequest";
 import BodySection from "./components/BodySection";
 import Dashboard from "./components/Dashboard";
+import BorrowerDashboard from "./components/BorrowerDashboard";
+import LenderDashboard from "./components/LenderDashboard";
 import SignupPage from "./components/SignupPage";
-import NavBar from "./components/NavBar"; 
-import { getSuiData } from "./services/blockchain";
-import './App.css';
+import NavBar from "./components/NavBar";
+import FooterSection from "./components/FooterSection";
+import ThirdSection from "./components/ThirdSection";
+import AboutUs from "./components/AboutUs";
+import "./App.css";
 
+const App = () => {
+  const [blockchainData, setBlockchainData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-function App() {
-  const userId = "12345"; // Example userId
-  const App = () => {
-    // State to hold blockchain data
-    const [blockchainData, setBlockchainData] = useState(null);
-    const [loading, setLoading] = useState(true); // For loading state
-    const [error, setError] = useState(null); // For error handling
-  
-    // This useEffect will run when the component mounts
-    useEffect(() => {
-      // Async function to fetch blockchain data
-      const fetchBlockchainData = async () => {
-        try {
-          const data = await getSuiData(); // Replace with actual function to get data from Sui
-          setBlockchainData(data);
-        } catch (err) {
-          setError("Failed to fetch data from blockchain");
-          console.error(err);
-        } finally {
-          setLoading(false);
-        }
-      };
-  
-      fetchBlockchainData();
-    }, []); // Empty array means this will only run once (on mount)
-  
-    if (loading) return <div>Loading...</div>;  // Show loading indicator
-    if (error) return <div>{error}</div>;  // Show error message if any
-  
-  
-  
-  e
+  useEffect(() => {
+    const fetchBlockchainData = async () => {
+      try {
+        // Replace with actual blockchain data fetch function
+        const response = await fetch("http://localhost:5000/api/blockchain-data");
+        const data = await response.json();
+        setBlockchainData(data);
+      } catch (err) {
+        setError("Failed to fetch data from blockchain");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlockchainData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <Router>
-      <header className="header">
-        <h1>Suiwise - Decentralized Microloans</h1>
-      </header>
-
-      <nav className="form-container">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/about-us" className="nav-link">About Us</Link>
-        <Link to="/create-ddi" className="nav-link">Create DDI</Link>
-        <Link to="/credit-score" className="nav-link">Credit Score</Link>
-        <Link to="/loan-request" className="nav-link">Loan Request</Link>
-      </nav>
-
+      <NavBar />
       <main className="container">
         <Routes>
           <Route path="/" element={<BodySection />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/get-started" element={<GetStarted />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/create-ddi" element={<CreateDDi />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/credit-score" element={<CreditScore userId={userId} />} />
+          <Route path="/borrower-dashboard" element={<BorrowerDashboard />} />
+          <Route path="/lender-dashboard" element={<LenderDashboard />} />
+          <Route path="/create-ddi" element={<CreateDDI />} />
+          <Route path="/credit-score" element={<CreditScore userId="12345" />} />
           <Route path="/loan-request" element={<LoanRequest />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<h2>Page Not Found</h2>} />
         </Routes>
       </main>
     </Router>
   );
-}
-}
+};
 
 export default App;

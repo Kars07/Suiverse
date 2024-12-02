@@ -16,4 +16,24 @@ const createLoanRequest = async (req, res) => {
   }
 };
 
-module.exports = { createLoanRequest };
+const approveLoanRequest = async (req, res) => {
+  try {
+    const { loanId } = req.body;
+    const loan = await loanRequestService.approveLoanRequest(loanId);
+    res.status(200).json(loan);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const repayLoan = async (req, res) => {
+  try {
+    const { loanId, repaymentAmount } = req.body;
+    const loan = await loanRequestService.repayLoan(loanId, repaymentAmount);
+    res.status(200).json(loan);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { createLoanRequest, approveLoanRequest, repayLoan };
